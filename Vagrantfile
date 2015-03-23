@@ -67,8 +67,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         override.ssh.username = wirbelsturm_config['aws']['local_user']
         override.ssh.pty = true # Enable pty/tty to prevent sudo problems on RHEL OS family
 
-        aws.region = "us-east-1"
-        aws.region_config "us-east-1", :ami => node_opts[:aws][:ami]
+        aws.region = wirbelsturm_config['aws']['region'] || "us-east-1"
+        aws.region_config aws.region, :ami => node_opts[:aws][:ami]
         aws.instance_type = node_opts[:aws][:instance_type]
         aws.security_groups = node_opts[:aws][:security_groups]
         aws.tags = {
