@@ -11,7 +11,7 @@ puts "| CREATING AWS SECURITY GROUP FOR WIRBELSTURM |"
 puts "+---------------------------------------------+"
 
 SECURITY_GROUP="wirbelsturm"
-REGION="us-west-2"
+REGION="us-east-1"
 VERSION="1.1"
 
 warn
